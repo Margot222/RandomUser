@@ -1,10 +1,30 @@
-<html>
-    <head>
-        <title>Random Users</title>
-    </head>
-    <body>
-        <p>Hi there!</p>
-        {{f_name}} {{l_name}}
-        <p>It works!</p>
-    </body>
-</html>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+	<div class="row">
+		<div class="col-lg-3 col-sm-6">
+
+            <div class="card hovercard">
+                <div class="cardheader">
+
+                </div>
+                <div class="avatar">
+                    <img alt="" src={{pic}}>
+                </div>
+                <div class="info">
+                    <div class="desc">{{f_name}} {{l_name}}</div>
+                    <div class="desc">Gender: {{gender}}</div>
+                    <div class="desc">{{email}}</div>
+                    <div class="desc">{{location}}</div>
+                </div>
+
+            </div>
+
+        </div>
+
+	</div>
+</div>

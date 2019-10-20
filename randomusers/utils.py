@@ -7,14 +7,18 @@ from .models import User
 def get_five_more_users(num_users=5):
     count = 0
     while count != num_users:
-        response = requests.get('https://randomuser.me/api/?inc=gender,name,location,email')
+        response = requests.get('https://randomuser.me/api/?inc=gender,name,location,email,picture')
         user_data = response.json()['results'][0]
         f_name = user_data['name']['first']
         l_name = user_data['name']['last']
         r_inside = re.compile(r'[r,R]')
         new_user = User()
         if not r_inside.findall(f_name + l_name):
-            new_user.save_user(user_data['gender'], f_name, l_name, user_data['location'], user_data['email'])
+            location = str(user_data['location']['street']['number']) + ', ' \
+                       + user_data['location']['street']['name'] \
+                       + '\n' + user_data['location']['city'] + ', ' + user_data['location']['country']
+            new_user.save_user(user_data['gender'], f_name, l_name, location,
+                               user_data['email'], user_data['picture']['medium'])
             count += 1
 
 
