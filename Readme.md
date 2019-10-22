@@ -1,5 +1,6 @@
-RandomUser uses https://randomuser.me/ API to fetch users five at a time and with the condition that their firstname and lastname do not contain the letter "r" or "R".
-The Web app waqs created using Django framework. The users are stored in an sqlite db. The functionality includes:
+RandomUser uses https://randomuser.me/ API to fetch users, five at a time and with the condition that their firstname and lastname do not contain the letter "r" or "R".
+The Web app was created using Django framework. The users are stored in an sqlite db. 
+The functionality includes:
 - Show one random user on the homepage
 - Add five more users to the database (without the letter "r")
 - Show all users in the database
