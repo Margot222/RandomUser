@@ -1,10 +1,103 @@
-<html>
-    <head>
-        <title>Random Users</title>
-    </head>
-    <body>
-        <p>Hi there!</p>
-        {{f_name}} {{l_name}}
-        <p>It works!</p>
-    </body>
-</html>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    {% load staticfiles %}
+
+    <!-- use django static tag ton load js file and css file. -->
+    <script src="{% static 'js/random_user.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/random_user.css' %}">
+
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
+<div class="container">
+    <div class="row user-menu-container square">
+        <div class="col-md-7 user-details">
+            <div class="row coralbg white">
+                <div class="col-md-6 no-pad">
+                    <div class="user-pad">
+                        <br><br>
+                        <h3 class="white"><i class="fa fa-check-circle-o"></i>{{f_name}} {{l_name}}</h3>
+                    </div>
+                </div>
+                <div class="col-md-6 no-pad">
+                    <div class="smallsquare">
+                        <img src="{{pic}}" class="smallsquare">
+                    </div>
+                </div>
+            </div>
+            <div class="row overview">
+                <div class="col-md-4 user-pad text-center">
+                    <form action="five_new_users/" method="GET">
+                        <button type="submit" class="user_button">5 More Users</button>
+                    </form>
+                </div>
+                <div class="col-md-4 user-pad text-center">
+                     <form action="/" method="GET">
+                        <button type="submit" class="user_button">Random User</button>
+                     </form>
+                </div>
+            </div>
+            <div class="row overview">
+                <div class="col-md-4 user-pad text-center">
+                    <form action="/all_users/" method="GET">
+                        <button type="submit" class="user_button">All Users</button>
+                    </form>
+                </div>
+                <div class="col-md-4 user-pad text-center">
+                     <form action="/users_deleted" method="GET">
+                        <button type="submit" class="user_button">Delete All Users</button>
+                     </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1 user-menu-btns">
+            <div class="btn-group-vertical square" id="responsive">
+                <a href="#" class="btn btn-block btn-default active">
+                  <i class="fa fa-bell-o fa-3x"><h5>Address</h5></i>
+                </a>
+                <a href="#" class="btn btn-default">
+                  <i class="fa fa-envelope-o fa-3x"><h5>Email</h5></i>
+                </a>
+                <a href="#" class="btn btn-default">
+                  <i class="fa fa-laptop fa-3x"><h5>Gender</h5></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4 user-menu user-pad">
+            <div class="user-menu-content active">
+                <h3>
+                    Address
+                </h3>
+                <ul class="user-menu-list">
+                    <li>
+                        <h4><i class="fa fa-user coral"></i>{{location}}</h4>
+                    </li>
+                </ul>
+            </div>
+            <div class="user-menu-content">
+                <h3>
+                    Email
+                </h3>
+                <ul class="user-menu-list">
+                    <li>
+                        <h4>{{email}}</h4>
+                    </li>
+                </ul>
+            </div>
+            <div class="user-menu-content">
+                <h3>
+                    Gender
+                </h3>
+                <ul class="user-menu-list">
+                    <li>
+                        <h4>{{gender}}</h4>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+

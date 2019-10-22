@@ -1,0 +1,49 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    {% load staticfiles %}
+
+    <!-- use django static tag ton load js file and css file. -->
+    <script src="{% static 'js/random_user.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/random_user.css' %}">
+
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
+<div class="container">
+    <div class="row user-menu-container square">
+        <div class="col-md-7 user-details">
+            <div class="row coralbg white">
+                <div class="col-md-6 no-pad">
+                    <h3 class="white"><i class="fa fa-check-circle-o"></i>Users Deleted</h3>
+                </div>
+            </div>
+                <div class="col-md-4 user-pad text-center">
+                    <form action="/five_new_users/" method="GET">
+                        <button type="submit" class="user_button">5 More Users</button>
+                    </form>
+                </div>
+                <div class="col-md-4 user-pad text-center">
+                     <form action="/" method="GET">
+                        <button type="submit" class="user_button">Random User</button>
+                     </form>
+                </div>
+            <div class="row overview">
+                <div class="col-md-4 user-pad text-center">
+                    <form action="/all_users/" method="GET">
+                        <button type="submit" class="user_button">All Users</button>
+                    </form>
+                </div>
+                <div class="col-md-4 user-pad text-center">
+                     <form action="/users_deleted" method="GET">
+                        <button type="submit" class="user_button">Delete All Users</button>
+                     </form>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
